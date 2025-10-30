@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="1400" height="220" viewBox="0 0 1400 220" role="img" aria-label="NextFlyNOVA logo">
+  <defs>
+    <!-- Longer arc so the full word (including the final "A") fits -->
+    <path id="arc" d="M40,150 C400,40 1000,40 1360,150" />
+  </defs>
+
+  <!-- Transparent background -->
+  <rect width="100%" height="100%" fill="transparent"/>
+
+  <!-- Text on arc -->
+  <text font-family="'Netflix Sans', 'Bebas Neue', 'Anton', 'Arial Black', sans-serif"
+        font-weight="900"
+        font-size="160"
+        letter-spacing="-8"
+        fill="#E50914"
+        dominant-baseline="middle"
+        text-rendering="geometricPrecision" >
+    <textPath href="#arc" xlink:href="#arc" startOffset="0%">
+      NEXTFLYNOVA
+    </textPath>
+  </text>
+</svg>
