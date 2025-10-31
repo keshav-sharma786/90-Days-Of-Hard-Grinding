@@ -73,7 +73,16 @@
 ![alt text](src/assets/image.png)
 
 
+💖 Support This Project
+Thank you for checking out NextFlyNovaGPT
+This project is a hands-on implementation inspired by the incredible “Namaste React” webseries by Akshay Saini. Building this has been a wonderful learning experience, and I’m truly grateful for the opportunity to share it with the community.
 
+Your feedback, stars ⭐, and contributions mean a lot — they keep this project alive and evolving!
+
+If you have any questions, ideas, or suggestions, feel free to connect. Let’s learn, build, and grow together 🚀
+
+🙏 Thank You for Your Support! 🙏
+Made with ❤️ and React
 
 
 
