@@ -6,7 +6,7 @@ import { useState } from "react";
 
 const RestaurantMenu = () => {
   // const [resInfo, setResInfo] = useState(null);
-  
+
   // useParams is basically a hook, which is given to us by the react-router-dom.
 
   const { resId } = useParams();
@@ -49,7 +49,7 @@ const RestaurantMenu = () => {
   // console.log(resInfo?.data?.data?.cards[2]?.card?.card?.info);
   // deconstructing the clumsy data
   const { name, cuisines, costForTwoMessage } =
-    resInfo?.data?.data?.cards[2]?.card?.card?.info;
+    resInfo?.data?.cards[2]?.card?.card?.info;
 
   // deconstructing the itemcards
   // console.log(
@@ -69,7 +69,7 @@ const RestaurantMenu = () => {
   // these all categories are of a particular restaurant only based on the resId
 
   const categories =
-    resInfo?.data?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+    resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
       (c) => {
         return (
           c?.card?.card?.["@type"] ===

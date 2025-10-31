@@ -3,7 +3,7 @@ import { CDN_URL } from "../utils/constants";
 
 const RestaurantCard = (props) => {
   const { resData } = props;
-
+  const Biryani = new URL("../assets/biryani.jpg", import.meta.url);
   // optional chaining feature in javascript
   const {
     cloudinaryImageId,
@@ -14,8 +14,9 @@ const RestaurantCard = (props) => {
     deliveryTime,
     name,
     sla,
+    id,
   } = resData?.info;
-
+  console.log(id);
   // here i have got my info object.
 
   return (
@@ -28,8 +29,8 @@ const RestaurantCard = (props) => {
     >
       <img
         className="rounded-lg h-60 w-80 max-md:w-[1100px] max-md:h-[750px]"
-        src={CDN_URL + cloudinaryImageId}
-        alt="Biryani"
+        src={id === 456789 ? Biryani : CDN_URL + cloudinaryImageId}
+        alt="Restaurant"
       />
       <div className="card-info-container">
         <h3 className="font-bold py-2 text-lg text-[#f65f5f] font-serif max-md:font-bold max-md:text-7xl max-md:mt-6">
@@ -38,8 +39,12 @@ const RestaurantCard = (props) => {
         <h4 className="text-white font-bold font-serif text-lg max-md:font-bold max-md:text-6xl max-md:mt-6">
           {cuisines.join(", ")}
         </h4>
-        <h4 className="text-white font-bold text-lg max-md:text-6xl max-md:mt-6">{avgRating}</h4>
-        <h4 className="text-white font-bold text-lg max-md:text-6xl max-md:mt-6">{costForTwo}</h4>
+        <h4 className="text-white font-bold text-lg max-md:text-6xl max-md:mt-6">
+          {avgRating}
+        </h4>
+        <h4 className="text-white font-bold text-lg max-md:text-6xl max-md:mt-6">
+          {costForTwo}
+        </h4>
         <h4 className="text-white font-bold text-lg max-md:text-6xl max-md:mt-6">
           {sla.deliveryTime} minutes
         </h4>
@@ -58,9 +63,11 @@ export const withPromotedLabel = (RestaurantCard) => {
     return (
       // this component is basically an enhanced version of this Restaurant Card
       <div>
-        <label className="text-white absolute bg-red-950 ml-3 p-2 w-24 rounded-lg">Promoted</label>
+        <label className="text-white absolute bg-red-950 ml-3 p-2 w-24 rounded-lg">
+          Promoted
+        </label>
         {/* {console.log(props)} */}
-        <RestaurantCard {...props}/>
+        <RestaurantCard {...props} />
       </div>
     );
   };
