@@ -1,11 +1,16 @@
 {
   "dependencies": {
+    "@google/generative-ai": "^0.24.1",
     "axios": "^1.12.2",
+    "devlop": "^1.1.0",
     "lucide-react": "^0.544.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-markdown": "^8.0.7",
     "react-router": "^7.9.3",
-    "react-router-dom": "^7.9.3"
+    "react-router-dom": "^7.9.3",
+    "remark-gfm": "^3.0.1",
+    "socket.io-client": "^4.8.1"
   },
   "devDependencies": {
     "buffer": "^6.0.3",

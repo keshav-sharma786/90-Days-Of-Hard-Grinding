@@ -1,3 +1,4 @@
+// src/App.js
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
@@ -9,58 +10,105 @@ import SearchMedicines from "./components/SearchMedicines";
 import AboutUs from "./components/AboutUs";
 import ChatBot from "./components/ChatBot";
 import AdminLogin from "./components/AdminLogin";
-import Chat from "./components/Chat";
+import AdminDashboard from "./components/AdminDashboard";
+import ChatWithAdmin from "./components/ChatWithAdmin";
+import AdminChat from "./components/AdminLiveChat";
+// ✅ Add admin chat screen
 
-const App = () => {
-  return (
-    <div>
-      <Header />
-      <Outlet />
-    </div>
-  );
-};
+import { AuthProvider } from "./AuthContext";
+import { AdminProvider } from "./AdminContext";
+import PrivateRoute from "./components/PrivateRoute";
+import PublicRoute from "./components/PublicRoute";
+import MedicinoBot2 from "./components/MedicinoBot2";
+
+const App = () => (
+  <div>
+    <Header />
+    <Outlet />
+  </div>
+);
 
 const appRouter = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <Error />,
     children: [
-      {
-        path: "/",
-        element: <Body />,
-      },
+      { path: "/", element: <Body /> },
+
+      // 🧑‍💻 Public Routes
       {
         path: "/login",
-        element: <Login />,
+        element: (
+          <PublicRoute>
+            <Login />
+          </PublicRoute>
+        ),
       },
       {
         path: "/signUp",
-        element: <SignUp />,
+        element: (
+          <PublicRoute>
+            <SignUp />
+          </PublicRoute>
+        ),
       },
+
+      // 👨‍💼 Admin Routes
+      { path: "/admin", element: <AdminLogin /> },
+      { path: "/admin/dashboard", element: <AdminDashboard /> },
+      { path: "/admin/chat", element: <AdminChat /> }, // ✅ Admin chat route
+
+      // 🔒 Protected User Routes
       {
-        path: "/getstarted",
-        element: <SearchMedicines />,
+        path: "/searchMedicines",
+        element: (
+          <PrivateRoute>
+            <SearchMedicines />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/about",
-        element: <AboutUs />,
+        element: (
+          <PrivateRoute>
+            <AboutUs />
+          </PrivateRoute>
+        ),
       },
       {
-        path: "/MedicinoBot",
-        element: <ChatBot />,
+        path: "/medicinoBot",
+        element: (
+          <PrivateRoute>
+            <ChatBot />
+          </PrivateRoute>
+        ),
       },
       {
-        path: "/admin",
-        element: <AdminLogin />,
+        path: "/medicinoBot2",
+        element: (
+          <PrivateRoute>
+            <MedicinoBot2 />
+          </PrivateRoute>
+        ),
       },
-       {
+      {
         path: "/chat",
-        element: <Chat />,
+        element: (
+          <PrivateRoute>
+            <ChatWithAdmin />
+          </PrivateRoute>
+        ),
       },
     ],
-    errorElement: <Error />,
   },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<RouterProvider router={appRouter} />);
+root.render(
+  <AuthProvider>
+    <AdminProvider>
+      <RouterProvider router={appRouter} />
+    </AdminProvider>
+  </AuthProvider>
+);
