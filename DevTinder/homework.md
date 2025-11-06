@@ -9,4 +9,8 @@
 - Difference between caret and tilda (^ vs ~)
 - What are dependencies
 - What is the use of "-g" while npm install
+- Play with routes and route extensions ex."/hello" "/hello123" "/hello/123"
+- Order of the routes matter a lot
+- Install Postman app and make a workspace/collection > test API call
+- Write logic to handle GET, POST, PATCH, PUT, DELETE basically all the API calls / HTTP Request Methods and test them on the Postman
 
