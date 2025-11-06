@@ -3,12 +3,14 @@ const express = require("express");
 const app = express();
 
 // Order of the code also matters my dear friends
-app.use("/user", (req, res) => {
-  res.send("HAHAHAHAHAHAHAHA");
-});
+// app.use("/user", (req, res) => {
+//   res.send("HAHAHAHAHAHAHAHA");
+// });
 
 // This will only handle GET call to /user
-app.get("/user", (req, res) => {
+// dynamic routing
+app.get("/user/:userId", (req, res) => {
+  console.log(req.params);
   res.send({ firstName: "Keshav", lastName: "Sharma" });
 });
 
@@ -31,3 +33,4 @@ app.use("/test", (req, res) => {
 app.listen(3000, () => {
   console.log("Server is successfully listening on port 3000...");
 });
+

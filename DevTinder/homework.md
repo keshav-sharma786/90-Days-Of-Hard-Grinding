@@ -13,4 +13,8 @@
 - Order of the routes matter a lot
 - Install Postman app and make a workspace/collection > test API call
 - Write logic to handle GET, POST, PATCH, PUT, DELETE basically all the API calls / HTTP Request Methods and test them on the Postman
+- Explore routing and use of ?, +, (), * and use of regex in routes
+- Read more about Routing on express docs
+- Reading the query params in the routes
+- Reading the dynamic routes
 
