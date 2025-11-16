@@ -188,7 +188,7 @@
 ## 💖 Support This Project
 
 Thank you for checking out **NextFlyNovaGPT**! 🎬  
-This project is a hands-on implementation inspired by the incredible **“Namaste React”** web series by **Akshay Saini**.  
+
 Building this app has been a wonderful learning journey — exploring React, Firebase, Redux, and Generative AI has been nothing short of amazing! 🌟  
 
 Your **feedback**, **⭐ stars**, and **contributions** mean the world — they keep this project alive, growing, and evolving. 🙌  

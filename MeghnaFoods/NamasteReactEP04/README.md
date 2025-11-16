@@ -116,7 +116,7 @@ If you like this project, don’t forget to **drop a ⭐** on the repository!
 ### 💖 Support This Project
 
 ## Thank you for checking out KS Meghna Foods!
-This project is a hands-on implementation inspired by the incredible “Namaste React” webseries by Akshay Saini.
+
 Building this has been a wonderful learning experience, and I’m truly grateful for the opportunity to share it with the community.
 
 Your feedback, stars ⭐, and contributions mean a lot — they keep this project alive and evolving!
