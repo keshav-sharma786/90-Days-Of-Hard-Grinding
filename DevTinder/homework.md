@@ -24,3 +24,6 @@
 - next function and errors along with res.send()
 - app.use("/route", rH, [rH2, rH3], rH4, rH5)
 
+- What is a Middleware
+- How express JS basically handles requests behind the scenes (try to read docs and try to explore more!!)
+
