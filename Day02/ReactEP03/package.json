@@ -1,7 +1,7 @@
 {
   "name": "namastereactep03",
   "version": "1.0.0",
-  "description": "This is Namaste React Episode03 By Keshav",
+  "description": "This is  React Episode03 By Keshav",
   "scripts": {
     "start" : "parcel index.html",
     "build" : "parcel build index.html",

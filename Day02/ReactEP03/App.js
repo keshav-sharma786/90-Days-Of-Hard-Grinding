@@ -14,7 +14,7 @@ console.log(heading);
 // React Element (JS Object)
 const jsxHeading = (
   <h1 id="heading" className="jsxHeading" tabIndex="1">
-    Namaste React Using JSX 🚀
+    React Using JSX 🚀
   </h1>
 );
 
@@ -38,7 +38,7 @@ const HeadingComponent = () => {
       {/* here inside these curly braces you can run any piece of javascript expressions */}
       <h2>{number + number}</h2>
       <h1 className="headingFunctionalComponent">
-        Namaste React Functional Component 🚀
+        React Functional Component 🚀
       </h1>
     </div>
   );
@@ -46,7 +46,7 @@ const HeadingComponent = () => {
 
 // now i want to render this Title Component inside this div id container
 const Title = () => {
-  return <h1 className="title">Namaste Title 🚀</h1>;
+  return <h1 className="title"> Title 🚀</h1>;
 };
 
 console.log(HeadingComponent());
@@ -58,7 +58,7 @@ const HeadingComponent2 = () => {
     React.createElement(
       "h1",
       { id: "headingFunctionalComponent02" },
-      "Namaste React Functional Component02 🚀"
+      " React Functional Component02 🚀"
     )
   );
 };
@@ -71,7 +71,7 @@ const elem = <span>React Element03 🚀</span>;
 const title = (
   <h1 className="container3">
     {elem}
-    Namaste React 03 using JSX 🚀
+    React 03 using JSX 🚀
     <HeadingComponent03 />
   </h1>
 );
@@ -82,7 +82,7 @@ function HeadingComponent03() {
   return (
     <div id="container3">
       {title}
-      <h1>Namaste React Functional Component 03 🚀</h1>
+      <h1> React Functional Component 03 🚀</h1>
     </div>
   );
 }

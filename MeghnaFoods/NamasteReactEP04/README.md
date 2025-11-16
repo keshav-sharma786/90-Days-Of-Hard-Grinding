@@ -2,7 +2,7 @@
 
 ---
 
-# 🙏 Namaste React — KS Meghna Foods 🍴
+# 🙏  — KS Meghna Foods 🍴
 
 ### 🚀 Food Ordering App (Frontend Project)
 

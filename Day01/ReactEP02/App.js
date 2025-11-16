@@ -9,7 +9,7 @@ const parent = React.createElement("div", { id: "parent" }, [
     // for giving more than 2 children, you have to convert React.createElement into an array.siblings
     // i wanted to have both h1 and h2 tags as siblings.
     [
-      React.createElement("h1", {}, "This is Namaste React 🚀"),
+      React.createElement("h1", {}, "This is  React 🚀"),
       React.createElement("h2", {}, "I am a h2 tag"),
     ]
   ),

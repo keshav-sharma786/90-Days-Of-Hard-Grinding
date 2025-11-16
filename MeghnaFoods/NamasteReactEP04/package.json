@@ -1,7 +1,7 @@
 {
   "name": "namastereactep04",
   "version": "1.0.0",
-  "description": "This is NamasteReact Episode 4 By Keshav",
+  "description": "This is React Episode 4 By Keshav",
   "scripts": {
     "test": "jest",
     "start": "parcel index.html",
@@ -12,12 +12,7 @@
     "url": "git+https://github.com/keshav-sharma786/90-Days-Of-Hard-Grind.git"
   },
   "keywords": [
-    "Namaste",
-    "React",
-    "Keshav",
-    "Akshay",
-    "Saini",
-    "Bhaiya"
+    "React"
   ],
   "author": "Keshav",
   "license": "ISC",
