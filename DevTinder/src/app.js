@@ -2,6 +2,10 @@ const express = require("express");
 
 const app = express();
 
+app.get("/Keshav", (req, res) => {
+  res.send("Namaste Keshav Ji");
+});
+
 app.get("/getUserData", (req, res) => {
   // Logic of DB call and get user data
   try {
@@ -12,7 +16,6 @@ app.get("/getUserData", (req, res) => {
   }
 });
 
-
 // Error Handling Middleware
 app.use("/", (err, req, res, next) => {
   if (err) {
@@ -21,8 +24,6 @@ app.use("/", (err, req, res, next) => {
     res.status(500).send("Something went wrong");
   }
 });
-
-
 
 app.listen(7777, () => {
   console.log("Server is successfully listening on port 7777...");

@@ -4,10 +4,6 @@ const app = express();
 
 const { adminAuth, userAuth } = require("./middlewares/auth");
 
-app.listen(7777, () => {
-  console.log("Server is successfully listening on the port");
-});
-
 // defining a middleware for /admin
 app.use("/admin", adminAuth);
 
@@ -25,4 +21,8 @@ app.get("/admin/getAllData", (req, res) => {
 
 app.get("/admin/deleteUser", (req, res) => {
   res.send("User Deleted");
+});
+
+app.listen(7777, () => {
+  console.log("Server is successfully listening on the port");
 });
