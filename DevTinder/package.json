@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node src/app.js",
-    "dev": "nodemon --inspect Season2/whyNeedMiddlewares.js"
+    "dev": "nodemon --inspect Season2/Middlewares.js"
   },
   "keywords": [
     "nodejs",

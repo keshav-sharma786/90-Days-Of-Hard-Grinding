@@ -19,10 +19,15 @@ app.use("/user", [
     //res.send("3rd Response!!!");
     next();
   },
-  (req, res, next) => {
-    // third argument => route handler2
-    console.log("Handling the route user4!!");
-    //res.send("4th Response!!!");
+  // (req, res, next) => {
+  //   // third argument => route handler2
+  //   console.log("Handling the route user4!!");
+  //   //res.send("4th Response!!!");
+  //   next();
+  // },
+  function fourthMiddleware(req, res, next) {
+    console.log("Handling the route user4");
+    // call next function
     next();
   },
   (req, res) => {
