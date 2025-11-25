@@ -89,3 +89,36 @@ const output9 = arr.reduce(function (acc, curr) {
 }, -Infinity);
 
 console.log(output9);
+
+// some more examples of map, filter and reduce
+const users = [
+  { firstName: "Keshav", lastName: "Sharma", age: 22 },
+  { firstName: "Raghav", lastName: "Sharma", age: 75 },
+  { firstName: "Anmol", lastName: "Sharma", age: 50 },
+  { firstName: "Yuvraaj", lastName: "Sharma", age: 22 },
+];
+
+// list of full names
+// ["Keshav Sharma", "Raghav Sharma", ...]
+
+const fullName = users.map((el) => el.firstName + " " + el.lastName);
+
+console.log(fullName);
+
+// there are 2 people with age 22
+// { 22 : 2, 75 : 1, 50 : 1}
+// We basically need to find out how many people are with the particular unique age group
+
+// reduce
+const uniqueAge = users.reduce(function (acc, curr) {
+  if (acc[curr.age]) {
+    acc[curr.age] = ++acc[curr.age];
+  } else {
+    acc[curr.age] = 1;
+  }
+  return acc;
+}, {});
+
+console.log(uniqueAge);
+
+
