@@ -1,7 +1,8 @@
+import EvenOrOddChecker from "./components/EvenOrOddChecker";
 import GuessTheNumber from "./components/GuessTheNumber";
 
 const App = () => {
-  return <GuessTheNumber />;
+  return < EvenOrOddChecker/>;
 };
 
 export default App;
