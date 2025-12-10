@@ -54,7 +54,6 @@ const SecondaryContainer = ({ pathname }) => {
             />
           </>
         )}
-        
       </div>
     )
   );
