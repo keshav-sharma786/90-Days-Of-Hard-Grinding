@@ -43,7 +43,8 @@ const HeadingComponent = () => {
     </div>
   );
 };
-
+// console.log(HeadingComponent);
+// console.log(<Title />);
 // now i want to render this Title Component inside this div id container
 const Title = () => {
   return <h1 className="title"> Title 🚀</h1>;
@@ -78,6 +79,7 @@ const title = (
 
 // Simple functions are being hoisted.
 // whereas arrow functions are not hoisted.
+console.log(HeadingComponent03);
 function HeadingComponent03() {
   return (
     <div id="container3">
