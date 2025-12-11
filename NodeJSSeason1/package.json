@@ -1,7 +1,7 @@
 {
-  
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon --inspect app.js"
-  }
+    "start": "node ./calculate/multiply.js",
+    "dev": "nodemon --inspect ./calculate/multiply.js"
+  },
+  "type": "commonjs"
 }
