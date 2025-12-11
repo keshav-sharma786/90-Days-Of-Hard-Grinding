@@ -12,6 +12,11 @@ console.log(z);
 // comment it out
 const { calculateSum, calculateMultiply} = require("./calculate");
 
+// requiring a json file
+
+const data = require("./data.json");
+console.log(data);
+
 var name = "Keshav Sharma";
 
 console.log(a);//undefined
@@ -20,7 +25,7 @@ var a = 10;
 var b = 20;
 calculateSum(a, b);
 calculateMultiply(a, b);
-console.log(x);
+
 
 console.log(name);
 // console.log(a + b);
