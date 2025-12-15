@@ -4,13 +4,15 @@ import LeapYear from "./components/LeapYear";
 import MortageCalculator from "./components/MortageCalculator";
 import { NamedExport } from "./components/ImportExport";
 import DefaultExport from "./components/ImportExport";
+import Counter from "./components/Counter";
 
 const App = () => {
   return (
-    <>
-      <NamedExport />
-      <DefaultExport />
-    </>
+    // <>
+    //   <NamedExport />
+    //   <DefaultExport />
+    // </>
+    <Counter />
   );
 };
 
