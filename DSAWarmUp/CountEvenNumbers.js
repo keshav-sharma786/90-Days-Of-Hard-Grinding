@@ -6,9 +6,14 @@ function countEvens(arr) {
     return false;
   }
   // checking for array containing non numbers
-  if (arr.every((x) => typeof x !== "number" || !Number.isFinite(x))) {
+//   if (arr.every((x) => typeof x !== "number" || !Number.isFinite(x))) {
+//     return false;
+//   }
+
+// correct arr every method condition
+if(!arr.every((x) => typeof x === "number" && Number.isFinite(x))) {
     return false;
-  }
+}
 
   // now counting the even numbers
   // using the reduce method of Javascript
@@ -20,4 +25,5 @@ function countEvens(arr) {
   }, 0);
 }
 
-module.exports = { countEvens };
+debugger
+const res = countEvens([2, 1, ""]);
