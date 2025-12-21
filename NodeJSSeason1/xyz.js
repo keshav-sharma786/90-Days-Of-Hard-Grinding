@@ -11,6 +11,40 @@ function x() {
 
 x();
 // require("./path")
-// All the code of the module is wrapped inside a function (IIFE)
+// All the code of the module is wrapped inside a function (IIFE) when you call the require function.
 
+// IIFE - Immediately Invoked Function Expression
 
+debugger;
+const a = 100;
+const b = 200;
+
+console.log(a + b);
+
+var sum = (function () {
+  console.log("Namaste IIFE 🚀");
+  const a = 2020;
+  const b = 6;
+  return a + b;
+})();
+
+(function () {
+  console.log("hello world");
+});
+
+const functionExpression = function () {
+  const a = 10;
+  const b = 20;
+  return 20;
+};
+
+functionExpression();
+
+const k = "playing with the function expressions";
+const playingWithFunctionExpressions = function () {
+  console.log("playing with the function expressions");
+};
+
+function a() {
+  console.log("a");
+}();
