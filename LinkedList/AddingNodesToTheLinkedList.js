@@ -44,6 +44,28 @@ LinkedList.prototype.addAtTail = function (val) {
 list.addAtTail(7);
 list.addAtTail(8);
 
+// adding element at index
+LinkedList.prototype.addAtIndex = function (index, val) {
+  let newNode = new Node(val);
+  // handle the corner cases
+  if (index === 0) {
+    this.addAtHead(val);
+    return;
+  } else if (index === this.size) {
+    this.addAtTail(val);
+  } else {
+    let curr = this.head;
+    for (let i = 0; i < index - 1; i++) {
+      curr = curr.next;
+    }
+    newNode.next = curr.next;
+    curr.next = newNode;
+  }
+  this.size++;
+};
+
+list.addAtIndex(2, 9);
+
 // Linked List Traversal
 LinkedList.prototype.traverse = function () {
   let current = this.head;
