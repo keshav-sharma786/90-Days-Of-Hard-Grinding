@@ -27,7 +27,22 @@ list.addAtHead(6);
 console.log(list);
 
 // Adding a newNode at the Tail
+LinkedList.prototype.addAtTail = function (val) {
+  let newNode = new Node(val);
+  if (this.head === null) {
+    this.head = newNode;
+  } else {
+    let curr = this.head;
+    while (curr.next !== null) {
+      curr = curr.next;
+    }
+    curr.next = newNode;
+  }
+  this.size++;
+};
 
+list.addAtTail(7);
+list.addAtTail(8);
 
 // Linked List Traversal
 LinkedList.prototype.traverse = function () {
