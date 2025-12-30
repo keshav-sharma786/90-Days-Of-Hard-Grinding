@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "start": "node xyz.js",
-    "dev": "nodemon --inspect xyz.js"
+    "start": "node app.js",
+    "dev": "nodemon --inspect app.js"
   },
   "type": "commonjs"
 }

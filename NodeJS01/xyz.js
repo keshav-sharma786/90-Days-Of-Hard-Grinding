@@ -1,3 +1,4 @@
+debugger;
 function x() {
   const a = 10;
   b();
@@ -15,7 +16,6 @@ x();
 
 // IIFE - Immediately Invoked Function Expression
 
-debugger;
 const a = 100;
 const b = 200;
 
@@ -45,6 +45,24 @@ const playingWithFunctionExpressions = function () {
   console.log("playing with the function expressions");
 };
 
-function a() {
-  console.log("a");
-}();
+// All the code of the module is copied inside IIFE
+(function (module, require) {
+  // All the code of the module runs inside here
+  require("/path");
+  function calculateMultiply(a, b) {
+    const result = a * b;
+
+    console.log(result);
+  }
+
+  console.log("multiplication module executed");
+
+  var x = "multiply";
+  // console.log(x);
+
+  console.log(module.exports);
+
+  module.exports = { calculateMultiply };
+
+  console.log(module.exports);
+})(module, require);
