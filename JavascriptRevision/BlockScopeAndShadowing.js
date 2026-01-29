@@ -71,17 +71,24 @@ console.log(d); // ! 100
 //   let a = 20;
 // }
 
-
 // var e = 500;
 // let e = 400;
-// console.log(e); 
+// console.log(e);
 //! Uncaught SyntaxError: Identifier 'a' has already been declared (at BlockScopeAndShadowing.js:61:5)
-
 
 let f = 20;
 function x() {
   var f = 20;
 }
 
-
-
+// ? Lexical Scope => Block scope also works in the same way as that of the Lexical scope.
+//debugger
+const k = 20;
+{
+  const k = 100;
+  {
+    const k = 200;
+    console.log(k); // ? 200 
+  }
+  console.log(k);// ? 100
+}
