@@ -1,4 +1,4 @@
-debugger;
+//debugger;
 console.log("Namaste Javascript 🚀");
 
 // Normal function
