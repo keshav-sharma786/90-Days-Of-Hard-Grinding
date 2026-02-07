@@ -4,6 +4,8 @@ import ReactDOM from "react-dom/client";
 // React.createElement => ReactElement(Object) => while rendering onto the dom it becomes a HTML Element.
 const heading = React.createElement("h1", { id: "heading" }, "Namaste React");
 
+
+
 console.log(heading);
 // JSX - is not HTML in javascript. It is HTML/XML like syntax.
 // This JSX code is transpiled before it reaches the JS Engine. This transpilation is being done by Parcel.Parcel gives the responsibility of this transpilation to a package called Babel.
@@ -32,6 +34,7 @@ const HeadingComponent = () => {
       {/* This is known as React Composiiton */}
       {/* These 3 things are one and the same things */}
       {Title()}
+      {console.log(<Title />)}
       <Title></Title>
       <Title />
       {heading}
@@ -49,6 +52,11 @@ const HeadingComponent = () => {
 const Title = () => {
   return <h1 className="title"> Title 🚀</h1>;
 };
+// console.log(Title());
+
+console.log(<Title />);
+
+// console.log(<Title></Title>);
 
 console.log(HeadingComponent());
 
@@ -59,8 +67,8 @@ const HeadingComponent2 = () => {
     React.createElement(
       "h1",
       { id: "headingFunctionalComponent02" },
-      " React Functional Component02 🚀"
-    )
+      " React Functional Component02 🚀",
+    ),
   );
 };
 console.log(HeadingComponent2());
@@ -93,5 +101,13 @@ function HeadingComponent03() {
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
+root.render(
+  React.createElement(
+    "button",
+    { onClick: () => alert("Button Clicked!") },
+    "Click Me",
+  ),
+);
 root.render(<HeadingComponent />);
+
 // your code is readable because you are using JSX, and JSX is not React.
