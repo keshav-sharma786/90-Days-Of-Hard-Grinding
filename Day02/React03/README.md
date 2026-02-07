@@ -1,4 +1,4 @@
-# Namaste React EP02 🚀
+# React EP02 🚀
 
 
 # Parcel
