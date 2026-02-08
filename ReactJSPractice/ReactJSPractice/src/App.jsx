@@ -13,7 +13,7 @@ const App = () => {
     //   <NamedExport />
     //   <DefaultExport />
     // </>
-    <TogglePassword />
+    <Counter />
   );
 };
 
