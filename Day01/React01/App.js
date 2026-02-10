@@ -20,6 +20,15 @@ const parent = React.createElement("div", { id: "parent" }, [
   ]),
 ]);
 
+function h1() {
+  return React.createElement("h1", null, "hello world");
+}
+
+function parent1() {
+  console.log(React.createElement(h1));
+  return React.createElement(h1);
+}
+
 // JSX.
 
 console.log(parent); // A simple javascript object only.
@@ -36,4 +45,5 @@ console.log(heading); // object
 const root = ReactDOM.createRoot(document.getElementById("root"));
 console.log(root);
 
-root.render(parent);
+console.log(React.createElement(parent1));
+root.render(React.createElement(parent1));
