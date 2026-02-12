@@ -1,9 +1,11 @@
-const heading1 = React.createElement("h1", null, "Namaste React 🚀");
+const h1 = React.createElement(
+  h1,
+  { className: "heading" },
+  "Namaste Heading 🚀",
+);
 
-console.log(heading1);
+console.log(h1);
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(heading1);
-// ! Another way 
-root.render(React.createElement("h1", null, "Namaste React2 🚀"));
 
-
+root.render(h1);
