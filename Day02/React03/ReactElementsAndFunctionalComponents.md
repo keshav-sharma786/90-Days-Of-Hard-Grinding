@@ -513,4 +513,26 @@ Always use:
 
 ---
 
+Yes, technically it **will work** in terms of rendering, BUT:
 
+## You really shouldn't use `class`
+
+Here's why:
+
+1. **The warning is annoying** - It clutters your console and makes it harder to spot real issues
+
+2. **It's unreliable** - While it might work now in your browser, React's behavior with invalid props can change between versions. Future versions might handle it differently or stop passing it through entirely.
+
+3. **It's not guaranteed** - React's documentation explicitly states that `className` is the correct prop. Using `class` is relying on unintended behavior.
+
+4. **Best practices matter** - If you're learning React or working on a team, using the proper React conventions is important. Code reviews would flag this.
+
+5. **Future-proofing** - React could become stricter in future versions and actually block invalid props.
+
+## Think of it like this:
+
+It's like driving with a "check engine" light on. Sure, the car still drives, but you're ignoring a warning that something isn't right.
+
+## Bottom line:
+
+Always use `className` in React. The fact that `class` "works" is just React being lenient with your mistake, not an indication that it's okay to use! 😊
