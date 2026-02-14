@@ -281,4 +281,236 @@ How They Work Together
 
 In essence, a functional component is the blueprint and a React element of function type is the instruction to React to use that blueprint with specific properties. [1, 2]
 
+<!-- ! ==================== 14 feb ==================== -->
+
+Great question 👍 Let’s break this down clearly in English.
+
+---
+
+## ❓ Why are you getting the warning?
+
+You wrote:
+
+```js
+const heading01 = createElement(
+  "h1",
+  { class: "heading1" },
+  "React Element Revision 01 🚀",
+);
+
+console.log(heading01);
+```
+
+React shows:
+
+> Warning: Invalid DOM property `class`. Did you mean `className`?
+
+This happens because in **React**, you cannot use `class` like in normal HTML.
+
+In HTML:
+
+```html
+<h1 class="heading1">Hello</h1>
+```
+
+In React:
+
+```js
+{
+  className: "heading1";
+}
+```
+
+---
+
+## 🤔 Why does it still render successfully?
+
+Because a **warning is not an error**.
+
+React is designed to:
+
+- Show warnings in development mode
+- Help developers fix mistakes
+- But NOT stop the application
+
+So:
+
+- ⚠️ You used an invalid property (`class`)
+- React warns you
+- But it still renders the element
+
+Execution continues because it’s not a breaking error.
+
+---
+
+## 🧠 Why does React use `className` instead of `class`?
+
+Two main reasons:
+
+1. `class` is a reserved keyword in JavaScript.
+2. React works with JavaScript DOM properties, not raw HTML attributes.
+
+In the browser’s DOM:
+
+```js
+element.className = "heading1";
+```
+
+There is no `element.class`.
+
+So React follows the DOM property naming.
+
+---
+
+## ⚙️ What’s happening internally?
+
+When React sees:
+
+```js
+{ class: "heading1" }
+```
+
+It checks:
+
+- Is this a valid React DOM property?
+- If not → show warning
+- But still try to apply it to the DOM
+
+So it logs the warning, but doesn’t crash.
+
+---
+
+## ✅ The Correct Version
+
+```js
+const heading01 = React.createElement(
+  "h1",
+  { className: "heading1" },
+  "React Element Revision 01 🚀",
+);
+```
+
+Now:
+
+- No warning
+- Proper React syntax
+- Clean execution
+
+---
+
+## 🎯 Key Takeaway
+
+- Warning ≠ Error
+- React warns you to follow correct DOM property naming
+- `class` is invalid in React → use `className`
+
+---
+
+If you want, I can also explain how `React.createElement()` actually creates a JavaScript object behind the scenes and how it becomes real DOM.
+
+Short answer: **No — you shouldn’t rely on `class` working in React.**
+Yes, it _may render_, but it is incorrect and can break in real apps.
+
+Let’s understand properly 👇
+
+---
+
+## What actually happens when you use `class`?
+
+When you write:
+
+```js
+React.createElement("h1", { class: "heading1" }, "Hello");
+```
+
+React:
+
+1. Sees an invalid property
+2. Shows a warning
+3. Tries to pass it to the DOM anyway
+
+So the browser ends up receiving:
+
+```html
+<h1 class="heading1">Hello</h1>
+```
+
+That’s why it **looks like it works**.
+
+---
+
+## Why you must NOT use it
+
+Because React is not promising this behavior.
+
+React’s contract is:
+
+> Only supported DOM properties are guaranteed to work.
+
+`class` is not supported → only `className` is supported.
+
+So future problems can happen:
+
+### 1️⃣ React features may fail
+
+Things like reconciliation, diffing, hydration, server rendering may behave incorrectly.
+
+### 2️⃣ Production builds
+
+In production optimizations, React may ignore unknown props.
+
+### 3️⃣ Frameworks (Next.js, SSR)
+
+Your UI can mismatch and crash hydration.
+
+### 4️⃣ Future React versions
+
+They may completely drop this fallback behavior.
+
+So your code becomes **fragile**.
+
+---
+
+## Very important mindset
+
+Think of it like this:
+
+> React is forgiving, not accepting.
+
+It renders to help you debug,
+not because your code is correct.
+
+---
+
+## Correct rule
+
+Always follow React DOM property names:
+
+| HTML     | React     |
+| -------- | --------- |
+| class    | className |
+| for      | htmlFor   |
+| onclick  | onClick   |
+| tabindex | tabIndex  |
+
+---
+
+## Final Answer
+
+> Can you use `class` and expect your code to not break?
+
+**No.**
+It works accidentally, not officially.
+React warns you because it is unreliable behavior.
+
+Always use:
+
+```js
+{
+  className: "heading1";
+}
+```
+
+---
+
 
