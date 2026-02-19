@@ -5,6 +5,7 @@
 var maxFreqSum = function (s) {
   let map = {};
   for (let i = 0; i < s.length; i++) {
+    map[s[i]] = !map[s[i]] ? 1 : ++map[s[i]];
     if (!map[s[i]]) {
       map[s[i]] = 1;
     } else {
