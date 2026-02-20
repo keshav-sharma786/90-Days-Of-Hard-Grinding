@@ -1,0 +1,57 @@
+/* ~for explicitly removing the default padding as well as margin */
+/* * {
+  margin: 0px;
+  padding: 0px;
+} */
+
+/* span {
+  color: blue;
+} */
+
+h1 {
+  background-color: aqua;
+  /* ~You can apply height and width to block level element */
+  padding: 20px;
+  border: 10px solid orange;
+  height: 300px;
+  width: 300px;
+  /* ~If I want to convert a block level element into an inline element, how ???==> on block level element just apply display: inline */
+  /* display: inline; */
+  /*?But when you say box-sizing:content-box, then height and width will only go to the content only  */
+  box-sizing: content-box;
+}
+
+h2 {
+  background-color: brown;
+  /* display: inline-block; */
+
+  width: 300px;
+  height: 300px;
+  /* width: 300px; */
+  border: 10px solid orange;
+  padding: 20px;
+  /* ~when you mark box-sizing: border-box,then at that time height and width donot go only to the content.In that content will also be included, padding will also be included, border will also be included*/
+  /*?box-sizing:border-box means starting from border height and width will be 300px */
+  box-sizing: border-box;
+}
+
+span {
+  background-color: pink;
+  /* ~You cannot apply height and width to an inline element. */
+  /*~ inline element says if you want to apply the padding,then inline element will allow only horizontal padding, not vertical padding.same goes for the margin.Horizonatal margin can be applied but not the vertical margin*/
+  height: 300px;
+  width: 300px;
+  margin-bottom: 150px;
+  /* ~overlapping is basically happenning because of padding-top and padding-bottom, actually inline elements does'not take space from the top and bottom, but visually if you add some colouring in the form of background color, then it only shows you that i am taking some space from the top and bottom. */
+  /* padding-top: 50px;
+  padding-bottom: 50px; */
+  padding-left: 30px;
+  padding-right: 30px;
+  /* padding: 20px; */
+  margin-left: 20px;
+
+  /* ~for converting an inline element into block element just give display: block to the inline element like span */
+  /* display: block; */
+}
+
+/* ?display:inline-block => The element will sit on the same line as the inline elements, but it will respect width, height, margin-top and margin-bottom like block level elements */

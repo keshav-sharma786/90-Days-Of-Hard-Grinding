@@ -1,0 +1,19 @@
+h1 {
+  background-color: orange;
+  height: 300px;
+  width: 300px;
+  border: 10px solid black;
+  padding: 10px;
+  /* padding short hand => top, right, bottom, left ==> clockwise*/
+  padding: 10px 20px 30px 40px;
+  /* Another padding shorthand => [top, bottom], [left, right] */
+  /* Height and width are only applied on content. */
+  padding: 20px 40px;
+  border-radius: 20px;
+}
+
+h2 {
+  background-color: pink;
+  border: 2px solid blue;
+  margin: 10px;
+}
