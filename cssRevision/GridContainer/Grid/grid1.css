@@ -1,0 +1,45 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: white;
+  font-size: 30px;
+}
+
+body {
+  background-color: black;
+}
+
+.container {
+  padding: 10px;
+  display: grid;
+  /* ~here basically i am telling that how many rows my grid container will have, so my gridContainer will have 2 rows of height and width 200px and 200px */
+  /* ~grid-template-rows: 200px 200px; */
+  grid-template-rows: 1fr 1fr;
+  /* ~my gridContainer will have 2 columns of 200px each */
+  grid-template-columns: 1fr 2fr;
+  /* ~grid-template-columns: 200px 200px; */
+  gap: 10px;
+  height: 400px;
+  width: 400px;
+  /* ?children of the gridContainer are overflowing why?? ==> because i have given the gap of 10px so for solving this issue there is a concept of fraction, so basically I can remove the 200px 200px from the grid-template-rows and grid-template-columns, and I will write 1fr 1fr. After doing this the childrens of the gridContainer are not over-flowing. */
+
+  /* !so basically I am saying if i remove 10px of gap then I am left with only 390 px , So give 1 fraction to one box and give one fraction to other box so total 2 fractions would be there, 1 fraction would be given to the first box and 1 fraction would be given to the second box. So first box will get 195px and second box also gets 195px. so the total space available you can divide in terms of the fraction */
+  background-color: aqua;
+}
+
+.first {
+  background-color: orange;
+}
+
+.second {
+  background-color: green;
+}
+
+.third {
+  background-color: red;
+}
+
+.fourth {
+  background-color: blueviolet;
+}

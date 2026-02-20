@@ -1,0 +1,44 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  color: white;
+  font-size: 40px;
+}
+
+.container {
+  display: grid;
+  height: 800px;
+  width: 800px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 2fr 2fr 1fr;
+  gap: 20px;
+}
+
+.Box {
+  background-color: blue;
+}
+
+.header {
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+.SideBar {
+  grid-row-start: 2;
+  grid-row-end: 4;
+}
+
+.Content1 {
+  grid-column-start: 2;
+  grid-column-end: 4;
+}
+
+.footer {
+  /* ~shortHand */
+  grid-column: 1/4;
+}
