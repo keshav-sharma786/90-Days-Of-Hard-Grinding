@@ -1,0 +1,30 @@
+h1 {
+  background-color: aqua;
+}
+
+/* ~id is used for specifically targeting a particular element, so id has more priority than any tagName or className */
+/* ? important Keyword > inline css(priority high) > id(priority) > class(priority) > tag(h1, h2) */
+/* #firstId {
+  background-color: pink;
+}
+
+.classA {
+  background-color: green;
+} */
+
+/* !ordering matters a lot, when there is a tie, then ordering of styling is very very important, suppose tie is on the basis of the id, so the styling which is written later, that will be applied*/
+#firstId {
+  background-color: pink;
+}
+
+/* !this styling will be applied */
+#firstId {
+  background-color: green;
+}
+
+/* ~important keyword also overrides the inline css */
+h2 {
+  background-color: aquamarine !important;
+}
+
+

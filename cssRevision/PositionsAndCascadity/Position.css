@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h2 {
+  background-color: orange;
+  position: relative;
+  /* ?mave away left by 50px in relation to it's own original position. relative elements does'not allow any element to come at it's original position, it's original position's space will only be reserved. */
+  left: 50px;
+}
+
+h3 {
+  background-color: pink;
+  /* ~even if you scroll the page, h3 will be fixed on top, it will not be scrolled along with it. */
+  /* ~h3 will make itself fixed relative to the window */
+  /* ~whereas fixed leaves it's original position and it also allows other elements to come at it's original position */
+  position: fixed;
+  top: 0px;
+  left: 250px;
+}
+
+h4 {
+  background-color: brown;
+  position: sticky;
+  /* ?after scrolling when the top of the h4 element becomes zero, then it's position will become fixed a top */
+  top: 0px;
+}
+
+p {
+  background-color: chartreuse;
+  /*? absolute also leave it's original space and position, other elements can also come at it's position*/
+  /* ~if parent and ancestor of the absolute element has been marked as relative, sticky or fixed then absolute element will position itself in relation with it's parent and ansector  */
+
+  /* ~if the position of the parent of absolute element is not set, then it will position itself in relation with the browser's window */
+  position: absolute;
+  top: 0;
+}
+
+
