@@ -1,0 +1,7 @@
+{
+  "scripts": {
+    "start": "node async.js",
+    "dev": "nodemon --inspect async.js"
+  },
+  "type": "commonjs"
+}
