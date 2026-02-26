@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "node async.js",
-    "dev": "nodemon --inspect async.js"
+    "dev": "nodemon --inspect blocking.js"
   },
   "type": "commonjs"
 }
