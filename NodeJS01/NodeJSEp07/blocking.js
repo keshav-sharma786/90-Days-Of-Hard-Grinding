@@ -1,4 +1,4 @@
-debugger
+// debugger
 const crypto = require("node:crypto");
 
 console.log("Hello World");
