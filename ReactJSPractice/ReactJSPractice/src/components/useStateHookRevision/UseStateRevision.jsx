@@ -11,6 +11,7 @@ function UseStateRevision() {
       <button
         onClick={() => {
           setName("Namaste React 🚀");
+          console.log(name);
         }}
       >
         Change Name
