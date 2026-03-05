@@ -6,6 +6,7 @@ import { NamedExport } from "./components/ImportExport";
 import DefaultExport from "./components/ImportExport";
 import Counter from "./components/Counter";
 import TogglePassword from "./components/TogglePassword";
+import UseStateRevision from "./components/useStateHookRevision/useStateRevision";
 
 const App = () => {
   return (
@@ -13,7 +14,8 @@ const App = () => {
     //   <NamedExport />
     //   <DefaultExport />
     // </>
-    <Counter />
+    // <Counter />
+    <UseStateRevision />
   );
 };
 
