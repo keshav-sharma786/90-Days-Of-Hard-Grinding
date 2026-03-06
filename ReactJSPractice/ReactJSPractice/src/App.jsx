@@ -8,6 +8,8 @@ import Counter from "./components/Counter";
 import TogglePassword from "./components/TogglePassword";
 import UpdatingStateUsingCallBack from "./components/useStateHookRevision/UpdatingStateUsingCallBack";
 import UpdatingStateHavingMultipleCallBacks from "./components/useStateHookRevision/UpdatingStateHavingMultipleCallBacks";
+import PlayingWithSetState01 from "./components/useStateHookRevision/PlayingWithSetState01";
+import PlayingWithSetState02 from "./components/useStateHookRevision/PlayingWithSetState02";
 
 const App = () => {
   return (
@@ -16,7 +18,9 @@ const App = () => {
     //   <DefaultExport />
     // </>
     // <Counter />
-    <UpdatingStateHavingMultipleCallBacks />
+    // <UpdatingStateHavingMultipleCallBacks />
+    // <PlayingWithSetState01 />
+    <PlayingWithSetState02 />
   );
 };
 
