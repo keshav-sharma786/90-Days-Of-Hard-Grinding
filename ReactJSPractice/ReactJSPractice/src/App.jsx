@@ -6,7 +6,8 @@ import { NamedExport } from "./components/ImportExport";
 import DefaultExport from "./components/ImportExport";
 import Counter from "./components/Counter";
 import TogglePassword from "./components/TogglePassword";
-import UseStateRevision from "./components/useStateHookRevision/useStateRevision";
+import UpdatingStateUsingCallBack from "./components/useStateHookRevision/UpdatingStateUsingCallBack";
+import UpdatingStateHavingMultipleCallBacks from "./components/useStateHookRevision/UpdatingStateHavingMultipleCallBacks";
 
 const App = () => {
   return (
@@ -15,7 +16,7 @@ const App = () => {
     //   <DefaultExport />
     // </>
     // <Counter />
-    <UseStateRevision />
+    <UpdatingStateHavingMultipleCallBacks />
   );
 };
 
