@@ -1,0 +1,7 @@
+{
+  "scripts": {
+    "start": "node EventLoop02.js",
+    "dev": "nodemon --inspect EventLoop03.js"
+  },
+  "type": "commonjs"
+}
