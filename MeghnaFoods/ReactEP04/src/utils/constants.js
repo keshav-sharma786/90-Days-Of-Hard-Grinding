@@ -7,8 +7,12 @@ export const LOGO_URL =
 // export const RES_API =
 //   "https://food-wagon-backend.onrender.com/api/restaurants?lat=25.61011402528211&lng=85.116419903934";
 
-export const RES_API =
-  "https://corsproxy.io/https://namastedev.com/api/v1/listRestaurants";
+//?safe end point
+// export const RES_API =
+//   "https://corsproxy.io/https://namastedev.com/api/v1/listRestaurants";
+
+//?Additional end point
+export const RES_API="https://foodfire.onrender.com/api/restaurants?lat=21.1702401&lng=72.83106070000001&page_type=DESKTOP_WEB_LISTING";
 
 // export const MENU_API =
 //   "https://food-wagon-backend.onrender.com/api/menu?lat=25.61011402528211&lng=85.116419903934&restaurantId=";

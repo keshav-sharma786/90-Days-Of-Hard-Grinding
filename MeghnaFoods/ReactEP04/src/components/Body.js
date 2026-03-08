@@ -76,10 +76,15 @@ const Body = () => {
   //     ?.restaurants
   // );
   useEffect(() => {
+    //?safe way
     if (json) {
+      //   const restaurants =
+      //     json?.data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+      //       ?.restaurants || [];
       const restaurants =
-        json?.data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
-          ?.restaurants || [];
+        json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+      console.log(restaurants);
+      // restaurants === listOfRestaurants
       setListOfRestaurants(restaurants);
       setFilteredRestaurant(restaurants);
     }

@@ -10,6 +10,7 @@ import UpdatingStateUsingCallBack from "./components/useStateHookRevision/Updati
 import UpdatingStateHavingMultipleCallBacks from "./components/useStateHookRevision/UpdatingStateHavingMultipleCallBacks";
 import PlayingWithSetState01 from "./components/useStateHookRevision/PlayingWithSetState01";
 import PlayingWithSetState02 from "./components/useStateHookRevision/PlayingWithSetState02";
+import PlayingWithUseEffectHook from "./components/useStateHookRevision/PlayingWithUseEffectHook";
 
 const App = () => {
   return (
@@ -20,7 +21,8 @@ const App = () => {
     // <Counter />
     // <UpdatingStateHavingMultipleCallBacks />
     // <PlayingWithSetState01 />
-    <PlayingWithSetState02 />
+    // <PlayingWithSetState02 />
+    <PlayingWithUseEffectHook />
   );
 };
 

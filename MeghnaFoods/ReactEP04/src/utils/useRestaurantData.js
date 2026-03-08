@@ -12,7 +12,7 @@ const useRestaurantData = () => {
     const fetchData = async () => {
         const data = await fetch(RES_API);
         const json = await data.json();
-        // console.log(json);
+        console.log(json);
         setRestaurantInfo(json);
     }
 

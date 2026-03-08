@@ -16,10 +16,6 @@
   ],
   "author": "Keshav",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/keshav-sharma786/90-Days-Of-Hard-Grind/issues"
-  },
-  "homepage": "https://github.com/keshav-sharma786/90-Days-Of-Hard-Grind#readme",
   "dependencies": {
     "@reduxjs/toolkit": "^2.9.0",
     "cors": "^2.8.5",
