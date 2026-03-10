@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "node thread-pool01.js",
-    "dev": "nodemon --inspect thread-pool5CryptoCall.js"
+    "dev": "nodemon --inspect Changingthread-poolSize.js"
   },
   "type": "commonjs"
 }
