@@ -4,8 +4,8 @@ const crypto = require("crypto");
 //~command for changing the size of threadPool
 //~$env:UV_THREADPOOL_SIZE = 12; node my_app.js
 
-
-process.env.UV_THREADPOOL_SIZE = 2;
+//?for debugging use
+// $env:UV_THREADPOOL_SIZE=12; nodemon --inspect Changingthread-poolSize.js
 
 crypto.pbkdf2("password", "salt", 50000000, 50, "sha512", (err, key) => {
   console.log("1 - cryptoPBKDF2 done");
@@ -29,4 +29,3 @@ crypto.pbkdf2("password", "salt", 50000000, 50, "sha512", (err, key) => {
 crypto.pbkdf2("password", "salt", 50000000, 50, "sha512", (err, key) => {
   console.log("5 - cryptoPBKDF2 done");
 });
-
