@@ -181,6 +181,7 @@ const Body = () => {
               {resCard.info.avgRating > 4.3 ? (
                 <RestaurantCardPromoted resData={resCard} />
               ) : (
+                //?resCard basically represents the single restaurant data, single object present in the array of objects which I am getting back from the api response for the custom hook i.e useRestaurantData
                 <RestaurantCard resData={resCard} />
               )}
             </Link>
