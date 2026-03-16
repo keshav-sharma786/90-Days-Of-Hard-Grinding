@@ -43,6 +43,8 @@ const Grocery = lazy(() => {
 });
 
 const AppLayout = () => {
+  //~createBrowserRouter is a function which is provided to us by react-router library.
+  // console.log(createBrowserRouter);
   // authentication code written
   const [userName, setUserName] = useState();
   useEffect(() => {
@@ -53,25 +55,27 @@ const AppLayout = () => {
   }, []);
   return (
     <Provider store={appStore}>
-    <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
-      <div className="app">
-        {/* Header Component */}
-        <Header />
-        {/* if path = "/" */}
-        {/* <Body /> */}
-        {/* only Body component will be loaded inside the Outlet, about and contact component will not be loaded inside the Outlet */}
-        {/* if path = "/about" */}
-        {/* <About /> */}
-        {/* Only About Component will be loaded inside the Outlet, Body and Contact component will not get loaded inside the Outlet */}
-        {/* if path = "/contact" */}
-        {/* <Contact /> */}
-        {/* Only Contact Component will be loaded inside the Outlet, Body and About component will not loaded inside the outlet*/}
-        <Outlet />
-      </div>
-    </UserContext.Provider>
+      <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
+        <div className="app">
+          {/* Header Component */}
+          <Header />
+          {/* if path = "/" */}
+          {/* <Body /> */}
+          {/* only Body component will be loaded inside the Outlet, about and contact component will not be loaded inside the Outlet */}
+          {/* if path = "/about" */}
+          {/* <About /> */}
+          {/* Only About Component will be loaded inside the Outlet, Body and Contact component will not get loaded inside the Outlet */}
+          {/* if path = "/contact" */}
+          {/* <Contact /> */}
+          {/* Only Contact Component will be loaded inside the Outlet, Body and About component will not loaded inside the outlet*/}
+          <Outlet />
+        </div>
+      </UserContext.Provider>
     </Provider>
   );
 };
+
+//?createBrowserRouter is a function which we have imported from react-router library.
 
 const appRouter = createBrowserRouter([
   {
@@ -116,6 +120,10 @@ const appRouter = createBrowserRouter([
     errorElement: <Error />,
   },
 ]);
+
+console.log(appRouter);
+
+console.log(<RouterProvider />);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<RouterProvider router={appRouter} />);
