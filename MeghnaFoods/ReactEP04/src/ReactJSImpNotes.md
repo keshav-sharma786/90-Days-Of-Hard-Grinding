@@ -173,6 +173,8 @@ ReactDOM patches only the changed part
 
 Because navigating from `/home` to `/about` **only swaps the Outlet content** in real DOM. `AppLayout`, `Navbar`, `Footer` — everything outside `<Outlet />` is **never touched by ReactDOM**. Reconciliation makes sure of that!
 
+
+
 > This is exactly why **Single Page Applications (SPAs)** are faster than traditional websites — no full page reload, only surgical DOM updates via reconciliation! 🎯
 
 <!-- !Very Very Veyr Very Very Important explanation about how react-router dom works behind the scenes -->
