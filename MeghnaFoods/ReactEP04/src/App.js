@@ -23,6 +23,9 @@ import Cart from "./components/Cart";
 //   backgroundColor: "#3f1911"
 // }
 
+//~<Outlet /> is also a react element
+console.log(<Outlet />);
+
 const Trial = (props) => {
   console.log(props);
   return <h1 style={{ color: "white" }}>{props.name}</h1>;
@@ -69,11 +72,19 @@ const AppLayout = () => {
           {/* <Contact /> */}
           {/* Only Contact Component will be loaded inside the Outlet, Body and About component will not loaded inside the outlet*/}
           <Outlet />
+          {/* {console.log(
+            <>
+              <Header />
+              <Outlet />
+            </>,
+          )} */}
         </div>
       </UserContext.Provider>
     </Provider>
   );
 };
+
+// console.log(AppLayout());
 
 //?createBrowserRouter is a function which we have imported from react-router library.
 
@@ -125,5 +136,12 @@ console.log(appRouter);
 
 console.log(<RouterProvider />);
 
+console.log(
+  <RouterProvider>
+    <AppLayout />
+  </RouterProvider>,
+);
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<RouterProvider router={appRouter} />);
+

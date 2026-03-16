@@ -175,7 +175,7 @@ Because navigating from `/home` to `/about` **only swaps the Outlet content** in
 
 > This is exactly why **Single Page Applications (SPAs)** are faster than traditional websites — no full page reload, only surgical DOM updates via reconciliation! 🎯
 
-<!-- !Very Very Veyr Very Very Important -->
+<!-- !Very Very Veyr Very Very Important explanation about how react-router dom works behind the scenes -->
 
 ## Complete Flow — Step by Step
 

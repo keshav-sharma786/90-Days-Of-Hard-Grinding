@@ -11,7 +11,7 @@ const Header = () => {
   // console.log("Header rendered");
   const onlineStatus = useOnlineStatus();
   const { loggedInUser } = useContext(UserContext);
-
+  
   // very very important
   // if no dependency array => useEffect is called on every render
   // if dependency array is empty = [] => useEffect is called only on the initial render of the header component, and it will ba called just once.
