@@ -25,7 +25,7 @@ import AboutUser from "./components/AboutUser";
 // }
 
 //~<Outlet /> is also a react element
-console.log(<Outlet />);
+// console.log(<Outlet />);
 
 const Trial = (props) => {
   console.log(props);
@@ -137,15 +137,15 @@ const appRouter = createBrowserRouter([
   },
 ]);
 
-console.log(appRouter);
+// console.log(appRouter);
 
-console.log(<RouterProvider />);
+// console.log(<RouterProvider />);
 
-console.log(
-  <RouterProvider>
-    <AppLayout />
-  </RouterProvider>,
-);
+// console.log(
+//   <RouterProvider>
+//     <AppLayout />
+//   </RouterProvider>,
+// );
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<RouterProvider router={appRouter} />);
