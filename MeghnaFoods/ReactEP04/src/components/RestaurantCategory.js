@@ -7,7 +7,7 @@ const RestaurantCategory = (props) => {
   // console.log(data);
   // I do'not want RestaurantCategory to have it's own state, so i will basically take away that power from the RestaurantCategory
   const [showItems, setShowItems] = useState(false);
-  let countHandleClick = 0;
+  // let countHandleClick = 0;
   const handleClick = () => {
     // expanding and collapsing of accordian
     setShowItems(!showItems);
@@ -27,6 +27,9 @@ const RestaurantCategory = (props) => {
         </div>
         {/* Accordian Body */}
         {showItems && <ItemList items={data.itemCards} dummy={dummy} />}
+        {/* ~doing it for testing purpose only */}
+        {/* ~data.itemCards here is an array of objects */}
+        {/* <ItemList items={data.itemCards} /> */}
       </div>
     </div>
   );

@@ -4,6 +4,7 @@ import { addItem } from "../utils/cartSlice";
 
 const ItemList = (props) => {
   const { items } = props;
+  // console.log(items);
   const Swiggy = new URL("../assets/swiggy.png", import.meta.url);
 
   const dispatch = useDispatch();

@@ -67,6 +67,9 @@ const RestaurantMenu = () => {
   // so for this i will basically use the Array.filter method. we are trying to filter all the cards inside it who are having the attribute @type: "itemCategory"
 
   // these all categories are of a particular restaurant only based on the resId
+  const cardCategories = resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
+
+  // console.log(cardCategories);
 
   const categories =
     resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
@@ -78,11 +81,11 @@ const RestaurantMenu = () => {
       }
     );
 
-  // console.log(categories);
-
-  const itemCards =
-    resInfo?.data?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]
-      ?.card?.card?.itemCards;
+  console.log(categories);
+  
+  // const itemCards =
+  //   resInfo?.data?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]
+  //     ?.card?.card?.itemCards;
 
   // console.log(itemCards);
 
@@ -99,6 +102,8 @@ const RestaurantMenu = () => {
       {/* Categories And Accordian. */}
       {/* we will basically loop of the categories array of object and for each category we will build our accordian */}
       {categories.map((category, index) => {
+        //~categories here is my array of objects.
+        //~category here represent my single object only.
         return (
           // Controlled Component
           <RestaurantCategory
