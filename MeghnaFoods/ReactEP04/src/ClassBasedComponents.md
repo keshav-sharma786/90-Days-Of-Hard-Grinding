@@ -98,3 +98,7 @@ count: 0
 > componentDidMount() is used for making the API Calls.
 
 > in functional components we used to make an api call inside the useEffect() Hook.
+
+> so basically If I want to make an api call, I will first of all render my component, constructor will be called, render will be called, now my component has been rendered,now I will make an api call.
+
+
