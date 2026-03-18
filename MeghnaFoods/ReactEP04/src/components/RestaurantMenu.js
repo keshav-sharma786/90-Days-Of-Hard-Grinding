@@ -8,9 +8,9 @@ const RestaurantMenu = () => {
   // const [resInfo, setResInfo] = useState(null);
 
   // useParams is basically a hook, which is given to us by the react-router-dom.
-
+  // console.log(useParams());
   const { resId } = useParams();
-  console.log(resId);
+  // console.log(resId);
 
   // Props Drilling Concept
   // Taking the example of dummy data

@@ -82,8 +82,9 @@ const Body = () => {
       //     json?.data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
       //       ?.restaurants || [];
       const restaurants =
-        json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
-      console.log(restaurants);
+        json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+          ?.restaurants;
+      // console.log(restaurants);
       // restaurants === listOfRestaurants
       setListOfRestaurants(restaurants);
       setFilteredRestaurant(restaurants);

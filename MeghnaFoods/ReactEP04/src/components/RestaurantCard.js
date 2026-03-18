@@ -17,7 +17,7 @@ const RestaurantCard = (props) => {
     sla,
     id,
   } = resData?.info;
-  console.log(id);
+  // console.log(id);
   // here i have got my info object.
 
   return (

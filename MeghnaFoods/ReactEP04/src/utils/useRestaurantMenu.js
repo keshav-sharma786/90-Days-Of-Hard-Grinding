@@ -15,16 +15,19 @@ const useRestaurantMenu = (resId) => {
   }, []);
 
   const fetchData = async () => {
-    const data = await fetch(MENU_API + resId);
-    // console.log(data);
-    // const json = await data.json();
-    const json = await data.json();
-    console.log(json);
-    setResInfo(json);
+    try {
+      const data = await fetch(MENU_API + resId);
+      // console.log(data);
+      // const json = await data.json();
+      const json = await data.json();
+      console.log(json);
+      setResInfo(json);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return resInfo;
 };
 
 export default useRestaurantMenu;
-
