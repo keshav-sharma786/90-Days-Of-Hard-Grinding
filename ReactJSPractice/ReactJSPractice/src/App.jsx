@@ -12,6 +12,9 @@ import PlayingWithSetState01 from "./components/useStateHookRevision/PlayingWith
 import PlayingWithSetState02 from "./components/useStateHookRevision/PlayingWithSetState02";
 import PlayingWithUseEffectHook from "./components/useStateHookRevision/PlayingWithUseEffectHook";
 
+import ContextProvider from "./components/ContextRevisionInReact/ContextProvider";
+import ContextParent from "./components/ContextRevisionInReact/ContextParent";
+
 const App = () => {
   return (
     // <>
@@ -22,7 +25,11 @@ const App = () => {
     // <UpdatingStateHavingMultipleCallBacks />
     // <PlayingWithSetState01 />
     // <PlayingWithSetState02 />
-    <PlayingWithUseEffectHook />
+    // <PlayingWithUseEffectHook />
+    // <PlayingWithUseEffectHook />
+    <ContextProvider>
+      <ContextParent />
+    </ContextProvider>
   );
 };
 
