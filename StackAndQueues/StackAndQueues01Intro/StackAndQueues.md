@@ -1,6 +1,6 @@
 >>Queue => Queue is a FIFO Data structure,FIFO means First In First Out.
 
->>In the queue,you can only add elements from the back i.e 'in',the 'in' operation can only happen from the back.And the out can only happen from the front.That is how the Queue behaves.
+>>In the queue,you can only add elements from the back i.e 'in',the 'in' operation can only happen from the back.And the out can only happen from the front.That is how the Queue behaves.That is why Queue data structure is called as First In First Out Data Structure.
 
 >>In the queue,elements can only be removed from the front of the queue.That is why it is known as First In First Out.Suppose there are 3 elements which have gone inside the Queue,the element which was gone first inside the queue,that element will be the first one to come out.
 
