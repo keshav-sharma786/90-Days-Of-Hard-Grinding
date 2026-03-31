@@ -14,6 +14,7 @@ import PlayingWithUseEffectHook from "./components/useStateHookRevision/PlayingW
 
 import ContextProvider from "./components/ContextRevisionInReact/ContextProvider";
 import ContextParent from "./components/ContextRevisionInReact/ContextParent";
+import Context from "./components/ContextHookAuthentication/Context";
 
 const App = () => {
   return (
@@ -27,9 +28,10 @@ const App = () => {
     // <PlayingWithSetState02 />
     // <PlayingWithUseEffectHook />
     // <PlayingWithUseEffectHook />
-    <ContextProvider>
-      <ContextParent />
-    </ContextProvider>
+    // <ContextProvider>
+    //   <ContextParent />
+    // </ContextProvider>
+    <Context />
   );
 };
 

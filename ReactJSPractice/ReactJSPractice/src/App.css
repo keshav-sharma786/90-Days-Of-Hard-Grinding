@@ -1,60 +1,70 @@
-body {
+/* 
+
+/* index.css or App.css */
+
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: "Poppins", sans-serif;
-  background-color: #f0f0f0;
+  padding: 0;
 }
 
-.container {
-  text-align: center;
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
   height: 100vh;
-  width: 100vw;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-h1 {
-  font-size: 30px;
-  margin-bottom: 20px;
-  color: #000000;
+.app {
+  width: 400px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
-.password-wrapper {
-  position: relative;
-  width: 290px;
+nav {
+  background-color: #4a90e2;
+  color: white;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-input[type="password"],
-input[type="text"] {
-  width: 100%;
-  padding: 10px 35px 10px 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  outline: none;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+nav h1 {
+  font-size: 20px;
+}
+
+nav span {
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+nav button {
   background-color: white;
-}
-
-.icon {
-  position: absolute;
-  right: -30px;
-  top: 50%;
-  transform: translateY(-50%);
+  color: #4a90e2;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-weight: bold;
   cursor: pointer;
-  color: #888;
+  transition: background-color 0.3s ease;
 }
 
-.icon:hover {
-  color: #000;
+nav button:hover {
+  background-color: #e0eaff;
 }
 
-.visibility-label {
-  display: block;
-  margin-top: 6px;
-  font-size: 13px;
-  color: #888;
-  text-align: left;
-  width: 280px;
+.dashboard {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.dashboard h2 {
+  font-size: 18px;
+  color: #333;
 }
