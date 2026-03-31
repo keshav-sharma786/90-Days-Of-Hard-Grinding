@@ -37,3 +37,4 @@
 >>web socket is a new concept, it means if the user has made a connection,and this connection stays for a longer time and it is not closing automatically,till the connection is made,this connection is not being closed between the client and the server,but it holds over there.Opening a web socket consumes a lot of resources also,and the server also has the capacity.
 
 
+## Now finally creating a application server/http server in Node JS.
