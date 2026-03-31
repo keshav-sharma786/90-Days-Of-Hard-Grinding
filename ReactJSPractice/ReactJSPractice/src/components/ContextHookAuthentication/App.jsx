@@ -3,7 +3,7 @@ import { UserProvider } from "./UserContext";
 import Navbar from "./Navbar";
 import Dashboard from "./Dashboard";
 
-const Context = () => {
+const App = () => {
   return (
     <UserProvider>
       <div className="app">
@@ -14,4 +14,4 @@ const Context = () => {
   );
 };
 
-export default Context;
+export default App;
