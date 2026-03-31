@@ -38,3 +38,14 @@
 
 
 ## Now finally creating a application server/http server in Node JS.
+
+## Node JS has a module, that module is known as http.this http module gives us access to a function which is called createServer.When you call this method,it returns back you a instance of a server.you can assume that there is a class and then you basically create a object of that class,it basically means that type of that object is class,similarly you can also create the instance of this server, const server = http.createServer().Basically this http module is creating a server,that means it is creating an application server, which can now listen to the requests.
+
+
+>>when you run node server.js,the program is waiting,we have not got back our terminal, my terminal is busy,why this terminal is busy?? this terminal is busy because it is waiting for the requests to come in.Now let me go to the browser and I myself will become the client,I have not hosted my server.js in some another computer,i have hosted it in my same laptop only,our node js http server is running on the same machine,where i have my browser.So basically I can refer to localhost://7777 and i can give it a port number,my application is on 7777 port number.My server returned me a hello world result.Similarly if you deploy this http server code to a AWS Machine,you can just deploy this code to aws machine,and then people can use the IP Address of that AWS Machine and can hit and get the result as "hello world" back.This is the basic http server that we have created,which can respond to the incoming requests.
+
+## Now suppose if you want some extra path How would you do that ???suppose if I want to get some secret data i.e localhost:7777/getSecretData,How will you handle this request
+
+
+>>Express JS is a framework which is built on the top of Node JS.we will use express js for creating web servers.
+
