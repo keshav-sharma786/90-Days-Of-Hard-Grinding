@@ -1,0 +1,18 @@
+{
+  "name": "nodejs13creatingadatabaseandmongodb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "database.js",
+  "scripts": {
+    "start": "node database.js",
+    "dev": "nodemon --inspect database.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "mongodb": "^7.1.1"
+  }
+}
