@@ -14,6 +14,9 @@ MyQueue.prototype.push = function (x) {
 /**
  * @return {number}
  */
+
+// worst case ==> O(n)
+// best/Average case ==> O(1)
 MyQueue.prototype.pop = function () {
   if (this.s2.length !== 0) {
     return this.s2.pop();
@@ -28,6 +31,9 @@ MyQueue.prototype.pop = function () {
 /**
  * @return {number}
  */
+
+// worst case ==> O(n)
+// best/Average case ==> O(1)
 MyQueue.prototype.peek = function () {
   if (this.s2.length !== 0) {
     return this.s2[this.s2.length - 1];
