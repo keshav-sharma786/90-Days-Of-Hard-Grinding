@@ -1,0 +1,1 @@
+//?There are different types of http methods ==>  GET, POST, PATCH, DELETE.These are basically the http methods,you can make a GET call,you can also make a POST call,you can make a PATCH call,you can make a DELETE call,these are the http methods which are supported by the browsers,and they are also supported by the HTTP protocols.
