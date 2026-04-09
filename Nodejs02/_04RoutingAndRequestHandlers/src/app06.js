@@ -31,6 +31,8 @@ app.use("/test", (req, res) => {
 //&3) Just click on this new and then It will ask you that what kind of API call do you want to make like http etc.
 //&4) Now select GET, POST call based on your choice.
 //&5) Click on save.
+
+//~Let me also make a POST call to "/hello" by the POSTMAN.It basically again gives me "Hello Hello Hello".But it is giving me the same result ???for solving it we will use app.get() instead of app.use().Go to app07.js
 // app.use("/", (req, res) => {
 //   res.send("Namaste Keshav!");
 // });
