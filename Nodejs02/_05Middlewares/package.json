@@ -1,0 +1,18 @@
+{
+  "name": "_05middlewares",
+  "version": "1.0.0",
+  "description": "",
+  "main": "01_app.js",
+  "scripts": {
+    "start": "nodemon src/04_app.js",
+    "dev": "nodemon --inspect src/04_app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
