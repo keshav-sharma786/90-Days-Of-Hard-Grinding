@@ -1,0 +1,5 @@
+- Create a free cluster on MongoDB official website (Mongo Atlas)
+- Install mongoose library
+- Connect your application to the Database "Connection-url"/devTinder
+- Call the connectDB function and connect to database before startting application on 7777.
+- Create a userSchema & user Model
