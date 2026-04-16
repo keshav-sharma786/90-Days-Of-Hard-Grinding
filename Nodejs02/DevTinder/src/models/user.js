@@ -23,7 +23,7 @@ const userSchema = new mongoose.Schema({
   },
 });
 
-console.log(userSchema);
+//console.log(userSchema);
 
 //&Step2 ==> Once you create the schema then we will create the mongoose model.We will create a "User" model So write "User".first thing you will pass is the name of the model and the second thing you will pass is the schema
 

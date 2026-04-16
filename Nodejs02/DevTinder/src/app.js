@@ -1,19 +1,117 @@
 import express from "express";
 import { connectDB } from "./config/database.js";
-
+import { User } from "./models/user.js";
+import { Us } from "./models/us.js";
+import { Ut } from "./models/ut.js";
+import { John } from "./models/u.js";
+import { SethRollins } from "./models/seth.js";
 const app = express();
 
-app.post("/signup", (req, res) => {
+app.post("/signup", async (req, res) => {
   //suppose we have a dummy userObj
   //Basically a user is signing up to your website.
   //When you are creating the account,it basically takes firstName, lastName,emailID and your password
-  const userObj = {
+  // const userObj = {
+  //   firstName: "Keshav",
+  //   lastName: "Sharma",
+  //   emailId: "Keshav123@gmail.com",
+  //   password: "Keshav@123",
+  // };
+  //Now I want to save this user into our mongodb database,into our user collection,How would we do it ??for that we need to create a new instance (object) of our model.And we created a User model right.
+
+  //We will basically create a new instance of this User model.
+  //first of all import the User Model over here.
+
+  //&Creating the new instance of the User model,User is a model,it is basically a function.
+
+  //~Here I am basically creating a new user with the data present in the userObj object.Basically I am creating a new instance of the User Model.
+  const user = new User({
     firstName: "Keshav",
     lastName: "Sharma",
     emailId: "Keshav123@gmail.com",
     password: "Keshav@123",
-  };
-  //Now I want to save this user into our mongodb database,into our user collection,How would we do it ??for that we need to create a new instance (object) of our model.And we created a User model right.
+  });
+
+  console.log(user);
+
+  //?Once I have created the instance of the User Model,what I will do is ==>
+  //user.save();
+  //~Once I will do the user.save(),this user.save() function will basically return you a promise,all of the mongoose functions and methods will return you a promise,most of the time you have to use the async and await.Now the user will be saved into our database.Always remember that you are creating the new instance of the User Model and you are passing the data over here,the new instance (object) will come inside the user variable.
+  
+  //?Whenever you do a user.save(),it will basically save the data into the database.
+
+  //&you basically have to make a POST api call to the "/signup" with the help of the POSTMAN.
+
+  //&here user which is basically the new instance of the User model will be saved into our database devTinder with "users" as the collection Name.
+
+  //~And also mongoDB will create these 2 fields which are ==> __id and __v automatically inside the document while saving it onto the database.
+  
+  //~Whenever you will add any document to the MongoDB database,mongoDB will automatically give it __id and it will automatically give it __v.__id is the unique ObjectId.
+
+  //&You can manually also add the id.But do'nt add the __id manually.
+
+  //?What is this __v?? ==> Whenever you create the document and you update the document,it is kind of maintaining the version of the document.If you are updating the data of the document,then the version automatically gets update.Do'not try to mess up with the automatic fields of the MongoDB.
+  
+  //&Whenever you are doing some db operations,whenever you are saving data into the database,whenever you are reading data from the database,whenever you are doing some db operations,always wrap them inside the try-catch block.It is a very good practice to wrap your code inside the try-catch Block.
+  
+  try {
+    await user.save();
+    res.send("User Added successfully");
+  } catch (error) {
+    res.status(400).send("Error saving the user:" + err.message);
+  }
+});
+
+app.post("/us", async (req, res) => {
+  const user = new Us({
+    firstName: "Brock",
+    lastName: "Lesnar",
+    emailId: "Brock123@gmail.com",
+    password: "Brock@123",
+  });
+
+  await user.save();
+
+  res.send("Brock Lesnar saved successfully");
+});
+
+app.post("/ut", async (req, res) => {
+  const user = new Ut({
+    firstName: "Roman",
+    lastName: "Reigns",
+    emailId: "Roman123@gmail.com",
+    password: "Roman@123",
+  });
+
+  await user.save();
+
+  res.send("Roman Reigns saved successfully");
+});
+
+app.post("/john", async (req, res) => {
+  const user = new John({
+    firstName: "John",
+    lastName: "Cena",
+    emailId: "John123@gmail.com",
+    password: "John@123",
+  });
+
+  await user.save();
+
+  res.send("John Cena saved successfully");
+});
+
+app.post("/Seth", async (req, res) => {
+  const user = new SethRollins({
+    firstName: "Seth",
+    lastName: "Rollins",
+    emailId: "Seth123@gmail.com",
+    password: "Seth@123",
+  });
+
+  await user.save();
+
+  res.send("Seth Rollins saved successfully");
 });
 
 //& Go to your MongoDB cluster,on compass,and copy the connection string from there,this is the only url which is basically required to connect to the database.
@@ -53,7 +151,7 @@ connectDB()
   .then((res) => {
     console.log("Database connection established...");
 
-    console.log(res);
+    // console.log(res);
 
     app.listen(7777, () => {
       console.log("App is listening on Port 7777...");
