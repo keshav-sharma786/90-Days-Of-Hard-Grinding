@@ -1,59 +1,37 @@
 import express from "express";
 import { connectDB } from "./config/database.js";
 import { User } from "./models/user.js";
-import { Us } from "./models/us.js";
-import { Ut } from "./models/ut.js";
-import { John } from "./models/u.js";
-import { SethRollins } from "./models/seth.js";
+
 const app = express();
 
+//&Our middleware will now be activated for all the routes.
+app.use(express.json());
+
 app.post("/signup", async (req, res) => {
-  //suppose we have a dummy userObj
-  //Basically a user is signing up to your website.
-  //When you are creating the account,it basically takes firstName, lastName,emailID and your password
-  // const userObj = {
-  //   firstName: "Keshav",
-  //   lastName: "Sharma",
-  //   emailId: "Keshav123@gmail.com",
-  //   password: "Keshav@123",
-  // };
-  //Now I want to save this user into our mongodb database,into our user collection,How would we do it ??for that we need to create a new instance (object) of our model.And we created a User model right.
+  //&But this data cannot be hardcoded right??We basically need a user to fill this data in an HTML form,and then send us the data in an api,we get this data and then we push it into the database.We have to make this data dynamic.
 
-  //We will basically create a new instance of this User model.
-  //first of all import the User Model over here.
+  //?So what we will do is,instead of writing this data over here,I want my data to be sent inside the signup api,while I am making a POST call,I should send the data right from here,and then my api should receive that data and push it into the database.Let us pass the dynamic data into the API.
 
-  //&Creating the new instance of the User model,User is a model,it is basically a function.
+  //~In the POSTMAN,the top portion represents the request and the below portion is the response.In this top portion,Go to Body ==> This is basically the request body.If I will click on this body,so there are different ways I can send the data inside the API ===  I can either send the form-data,raw data,I can even send the binary data.But I want to send the JSON data to my backend,to my server.My server should read that JSON data and then push it into the database.
 
-  //~Here I am basically creating a new user with the data present in the userObj object.Basically I am creating a new instance of the User Model.
-  const user = new User({
-    firstName: "Keshav",
-    lastName: "Sharma",
-    emailId: "Keshav123@gmail.com",
-    password: "Keshav@123",
-  });
+  //&In the POSTMAN inside body select the raw.Under raw === under json also you can basically select the lot of things like ==> Text,JSON,javascript,html,XML.You can either send that raw data in text,you can also send the raw data in javascript,you can also send the raw data in json,you can send the raw data in HTML,XML.XML was used widely before JSON.So I will basically send the dynamic data in the form of JSON object from the POSTMAN like this === {"firstName": "Rohit",}
 
-  console.log(user);
+  //?JSON cannot accept the last comma,but a JS object can accept.After sending the data from the POSTMAN,I want to receive that data over here and push it inside my database,How will I do that ???
 
-  //?Once I have created the instance of the User Model,what I will do is ==>
-  //user.save();
-  //~Once I will do the user.save(),this user.save() function will basically return you a promise,all of the mongoose functions and methods will return you a promise,most of the time you have to use the async and await.Now the user will be saved into our database.Always remember that you are creating the new instance of the User Model and you are passing the data over here,the new instance (object) will come inside the user variable.
-  
-  //?Whenever you do a user.save(),it will basically save the data into the database.
+  // console.log(req); //&This req is the request,this is basically the whole request that POSTMAN has sent to us,and the server has received this request and express has converted this request into an object and it has given this object to us to use it.The data that you sent over here is also the part of the request object but you cannot directly read the data from this req object.Now I want to read the data which is present on the body of this request.I can just do the req.body.
+  //console.log(req.body); //~undefined.Why??Ideally In my req body I have sent this JSON data then why it is coming undefined over here ???the reason is data which is being sent over here is being sent in the JSON format and our server is not able to read that JSON data,to read that JSON data we will need a help of a middleware,why I am saying a middleware?? Because I will have to use it for all my api's.I need a middleware that can just check the incoming request and it can just read the JSON,convert that JSON into a javascript object put it into the body of the request,give us access to that data over here.
 
-  //&you basically have to make a POST api call to the "/signup" with the help of the POSTMAN.
+  //?There is a very famous middleware which is given to us the expressJS itself, and it is known as express. json middleware.This was also the major concern when we use to develop applications using express,If we want to read some JSON,I can write my own middleware or I have to rely on some random third party middleware.
 
-  //&here user which is basically the new instance of the User model will be saved into our database devTinder with "users" as the collection Name.
+  //console.log(req.body);
 
-  //~And also mongoDB will create these 2 fields which are ==> __id and __v automatically inside the document while saving it onto the database.
-  
-  //~Whenever you will add any document to the MongoDB database,mongoDB will automatically give it __id and it will automatically give it __v.__id is the unique ObjectId.
+  //&What does this express.json() middleware has done is === It reads the JSON object,converts it into a Javascript object,and it just adds that javascript object back to this req object in the body.Now my req.body is a Javascript object.And now I can also read this body properly.
 
-  //&You can manually also add the id.But do'nt add the __id manually.
+  //~This req.body is exactly same as that object (dummyUser) which I basically passed inside the new User({})
 
-  //?What is this __v?? ==> Whenever you create the document and you update the document,it is kind of maintaining the version of the document.If you are updating the data of the document,then the version automatically gets update.Do'not try to mess up with the automatic fields of the MongoDB.
-  
-  //&Whenever you are doing some db operations,whenever you are saving data into the database,whenever you are reading data from the database,whenever you are doing some db operations,always wrap them inside the try-catch block.It is a very good practice to wrap your code inside the try-catch Block.
-  
+  //&This JSON data(Rohit Sharma) come over here,this express.json() plugin,a middleware will just read that json object,it will convert it into a javascript object,and will add that javascript object onto the req.body.Now I can read this body.Now I can basically create the new instance of the User model using the data which I have got from the sign-up post api.And this user can now be properly saved to the database.
+
+  const user = new User(req.body);
   try {
     await user.save();
     res.send("User Added successfully");
@@ -62,90 +40,58 @@ app.post("/signup", async (req, res) => {
   }
 });
 
-app.post("/us", async (req, res) => {
-  const user = new Us({
-    firstName: "Brock",
-    lastName: "Lesnar",
-    emailId: "Brock123@gmail.com",
-    password: "Brock@123",
-  });
+//?Now is the time to read the data also from the database.Let us now make the GET api and in that GET api,I want to get all the users from the database.Basically In the Dev Tinder I basically want to create the feed API.I want to get all the users from the database,It is kind of like my feed.I basically want to create a feed API which will get all the users from the database and give it back to the UI or the POSTMAN.
 
-  await user.save();
+//~Let us make an api to find only one user from the database.
+//~Get user by email.
+app.get("/user", async (req, res) => {
+  const userEmail = req.body.emailId;
 
-  res.send("Brock Lesnar saved successfully");
+  //&Go to the postman,create a new GET request.Go to the body.Go to the raw and add the JSON data in the form of === {"emailId": "Keshav@gmail.com"} and hit the enter and send the data,you will get that document as the response in the postman.
+
+  //?It will basically give you the array of objects over here.And that array only has one object with the emailId that I passed while sending the request on the POSTMAN.
+
+  //~Suppose that the user with that emailId was not found,How do you handle that case ???Suppose If I passed the wrong email Id??? while sending GET request on the POSTMAN.It will return me an empty array.But what if I have to throw an error ???
+
+  //&What I was doing over here was I was finding the user by using the emailId,what if there were 2 users with the same emailId???Let us first of all create 2 users with the same emailId.Let us create 2 Rohit Sharma's.Now if i send the request,It will give me the 2 objects (Rohit Sharma),but there is also the method findOne() === it will basically return you only the one Object from the database.It will basically not give you an array.Let us create one more GET api for just finding out only the one user.
+
+  try {
+    const users = await User.find({ emailId: userEmail });
+    if (users.length === 0) {
+      res.status(404).send("User not found");
+    } else {
+      res.send(users);
+    }
+  } catch (error) {
+    res.status(400).send("Something went wrong");
+  }
 });
 
-app.post("/ut", async (req, res) => {
-  const user = new Ut({
-    firstName: "Roman",
-    lastName: "Reigns",
-    emailId: "Roman123@gmail.com",
-    password: "Roman@123",
-  });
-
-  await user.save();
-
-  res.send("Roman Reigns saved successfully");
+//~findOne()
+app.get("/findOneUser", async (req, res) => {
+  const userEmail = req.body.emailId;
+  try {
+    const user = await User.findOne({ emailId: userEmail });
+    res.send(user);
+  } catch (error) {
+    res.status(400).send("Something went wrong");
+  }
 });
 
-app.post("/john", async (req, res) => {
-  const user = new John({
-    firstName: "John",
-    lastName: "Cena",
-    emailId: "John123@gmail.com",
-    password: "John@123",
-  });
+//&Feed API === GET/feed === get all the users from the database
+app.get("/feed", async (req, res) => {
+  //&Whenever you want to get the data from the database,you should know which model you have to use.
+  //~I am getting users,so I want to query using this model User.Go to docs === mongoose.com/docs/ === Then go to the Model in the left side secion.Go to the Model.find() method.Suppose If I want to find out the documents in my database,this is how I can find it.
 
-  await user.save();
+  //?Suppose If I want to find out all the documents inside the collection
 
-  res.send("John Cena saved successfully");
+  try {
+    const users = await User.find({});
+    res.send(users);
+  } catch (error) {
+    res.status(400).send("Something went wrong");
+  }
 });
-
-app.post("/Seth", async (req, res) => {
-  const user = new SethRollins({
-    firstName: "Seth",
-    lastName: "Rollins",
-    emailId: "Seth123@gmail.com",
-    password: "Seth@123",
-  });
-
-  await user.save();
-
-  res.send("Seth Rollins saved successfully");
-});
-
-//& Go to your MongoDB cluster,on compass,and copy the connection string from there,this is the only url which is basically required to connect to the database.
-
-//&First of all let us connect our application to the free MongoDB cluster.Below are the steps ==>
-
-//?1).First of all you have to create a config folder inside the src folder.All the configuration files and anything that you want to configure in your app,just use this config folder.Inside the config folder,create a file database.js.In the database.js file I will write the logic to connect to our database.To connecting to the database,to talk to the database,we will be using an important npm library and that npm library is known as Mongoose.Whenever you are connecting your NodeJS Application to your Mongo Database,use mongoose because mongoose is a very amazing library for creating schemas,models and talking to your MongoDB database.
-
-//?2) npm install mongoose
-//?3) go to database.js
-
-//&Whenever this app.listen() code runs,basically now my server has started accepting some requests,but what if my server has already started listening to the requests,but my database is not connected.It will be a big problem.Now people are hitting our api's but the database connection is not successfully established.It is a bad thing is'nt it.
-
-//&The right process is first of all connect to your database,then listen onto the server.
-
-//&once your database connection has successfully established,then only you do app.listen().
-
-//&I will import connectDB function from database.js and I will call it in my app.js.
-
-//&This is the correct and proper way of connecting to the database.
-
-//~Think about a case where the database is not connected successfully and and your app started listening to the api requests,the app has started up but your database is not connected successfully,that can cause problems is'nt it.There will be the users who are hitting your api's and you are still not connected to your database,so always connect to your database,then call app.listen().Once you call app.listen() that means your server has started.
-
-//&What do you mean by the schema of the database ?? ==> Whenever you are creating a database,Suppose you are putting some user's information into the database,User Collection and before I create a collection,I will basically have to create the schema of the user.Schema is an identity for that particular collection documents.
-
-//?If I say that I am creating a User schema,basically I am defining a User.
-
-//&Creating a schema means that you are telling what all things will you store in this user's collection??What can a User have,user can have a firstName,user can have a lastName,user can have an email id,user can have a password.All these things we will store inside the user's collection,for that we will need a Schema.
-
-//^Inside the mongoose docs go to the schema,read more about it that how can you create a schema.
-
-//?Inside the src create a new folder named as models.We are basically creating a model,we are modelling our database.We will create a User Model.
-
-//&Inside models create a file user.js and we will now meet in the user.js file.
 
 connectDB()
   .then((res) => {

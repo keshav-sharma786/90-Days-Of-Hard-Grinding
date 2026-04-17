@@ -21,6 +21,11 @@ const userSchema = new mongoose.Schema({
   gender: {
     type: String,
   },
+
+  emailId: {
+    // ← was completely missing!
+    type: String,
+  },
 });
 
 //console.log(userSchema);
