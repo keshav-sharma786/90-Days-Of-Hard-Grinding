@@ -34,6 +34,9 @@ const userSchema = new mongoose.Schema({
 
 export const User = mongoose.model("User", userSchema);
 
+// console.log(User);
+// console.log(User.prototype);
+
 //?Whenever you create a database a mongoDB database,you create collection inside it,that collection will basically hold some data.
 
 //~Whenever you are creating a model,the name always starts with a capital letter,basically name when it starts with a capital letter,says that okay it is a kind of like a mongoose model.It is a User,it is defining a collection.

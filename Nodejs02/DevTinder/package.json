@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon src/app1.js",
-    "dev": "nodemon --inspect src/app1.js",
+    "dev": "nodemon --inspect src/appRevisionMongooseSchemaAndModels.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

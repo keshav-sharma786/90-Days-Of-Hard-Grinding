@@ -5,6 +5,7 @@ import { Us } from "./models/us.js";
 import { Ut } from "./models/ut.js";
 import { John } from "./models/u.js";
 import { SethRollins } from "./models/seth.js";
+import { BrockLesnar } from "./models/brockLesnar.js";
 const app = express();
 
 app.post("/signup", async (req, res) => {
@@ -22,7 +23,7 @@ app.post("/signup", async (req, res) => {
   //We will basically create a new instance of this User model.
   //first of all import the User Model over here.
 
-  //&Creating the new instance of the User model,User is a model,it is basically a function.
+  //&Creating the new instance of the User model,User is a model,it is basically a Constructor function,class.
 
   //~Here I am basically creating a new user with the data present in the userObj object.Basically I am creating a new instance of the User Model.
   const user = new User({
@@ -33,6 +34,7 @@ app.post("/signup", async (req, res) => {
   });
 
   console.log(user);
+  console.log(user.__proto__);
 
   //?Once I have created the instance of the User Model,what I will do is ==>
   //user.save();
@@ -64,6 +66,21 @@ app.post("/signup", async (req, res) => {
 
 app.post("/us", async (req, res) => {
   const user = new Us({
+    firstName: "Brock",
+    lastName: "Lesnar",
+    emailId: "Brock123@gmail.com",
+    password: "Brock@123",
+  });
+
+  await user.save();
+
+  res.send("Brock Lesnar saved successfully");
+});
+
+
+//&saving BrockLesnar onto our MongoDB database
+app.post("/brockLesnar", async (req, res) => {
+  const user = new BrockLesnar({
     firstName: "Brock",
     lastName: "Lesnar",
     emailId: "Brock123@gmail.com",
