@@ -20,6 +20,7 @@
 
 > In this class, we will create a constructor, this class will have a constructor and this constructor will now receive the props => constructor(props){}
 
+
 > inside this constructor we will also have to use the super(props).
 
 > In the class Based components we get the props inside the constructor we definitely have to use the super(props).it is mandatory to write super(props), if you do'not write super(props) then the console.log(props) will throw an error
