@@ -2,6 +2,7 @@ import express from "express";
 import { connectDB } from "./config/database.js";
 import { User } from "./models/user.js";
 
+
 const app = express();
 
 //&Our middleware will now be activated for all the routes.
