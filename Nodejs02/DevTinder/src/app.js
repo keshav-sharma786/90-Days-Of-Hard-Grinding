@@ -5,6 +5,7 @@ import { User } from "./models/user.js";
 
 const app = express();
 
+
 //&Our middleware will now be activated for all the routes.
 app.use(express.json());
 
