@@ -27,3 +27,5 @@ var asteroidCollision = function (arr) {
 
   return stack;
 };
+
+//&try to dry run this code once..
