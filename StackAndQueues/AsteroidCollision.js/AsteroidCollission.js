@@ -29,3 +29,4 @@ var asteroidCollision = function (arr) {
 };
 
 //&try to dry run this code once..
+//~Excalidraw approach link === https://excalidraw.com/#json=ZIZYwqUBkfGs2dyqiz5d0,WaKlnJRk3nUX5crdD6hLPg
