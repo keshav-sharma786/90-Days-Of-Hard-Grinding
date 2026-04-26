@@ -2,9 +2,7 @@ import express from "express";
 import { connectDB } from "./config/database.js";
 import { User } from "./models/user.js";
 
-
 const app = express();
-
 
 //&Our middleware will now be activated for all the routes.
 app.use(express.json());
@@ -73,8 +71,18 @@ app.get("/user", async (req, res) => {
 app.get("/findOneUser", async (req, res) => {
   const userEmail = req.body.emailId;
   try {
-    const user = await User.findOne({ emailId: userEmail });
-    res.send(user);
+    //&Whatever you are passing over here (emailId),basically it should match exactly how you have defined it in your models in the schema,if you have written emailId over here,everywhere you should use emailId.
+
+    //~Suppose if the email is not present then It will basically give me an empty response.inside user null will be stored.
+
+    //?If you donot pass emailId: userEMail inside User.findOne({}),then mongoDB will return the first document present in the collection.But it is not sure,docs also use arbitrary word here.
+    const user = await User.findOne({ emailId: userEmail }).exec();
+    // console.log(user);
+    if (!user) {
+      res.status(404).send("User not found");
+    } else {
+      res.send(user);
+    }
   } catch (error) {
     res.status(400).send("Something went wrong");
   }
@@ -90,6 +98,47 @@ app.get("/feed", async (req, res) => {
   try {
     const users = await User.find({});
     res.send(users);
+  } catch (error) {
+    res.status(400).send("Something went wrong");
+  }
+});
+
+//!Let us now make the delete API.first of all let us find in the documentation what query I will use for deleting a single document.So i can use this method === findByIdAndDelete
+
+//!I also need a userId of the user document to be deleted,how will I get the userId ??
+app.delete("/user", async (req, res) => {
+  console.log(req.body);
+  console.log(req.body.userId);
+  const userId = req.body.userId;
+  console.log(userId);
+  try {
+    const user = await User.findByIdAndDelete({ _id: userId });
+    console.log(user);
+    res.send("User deleted successfully");
+  } catch (err) {
+    res.status(400).send("Something went wrong");
+  }
+});
+
+//&Let us create an api for updating the data of the user === update/edit route
+//&We will basically use findById And update query.
+app.patch("/user", async (req, res) => {
+  console.log(req.body);
+  const userId = req.body.userId;
+  //&this is basically the updated data that I will sent from the POSTMAN
+  //&Go to Postman and send the request like this ===
+  console.log(userId);
+  const data = req.body;
+  console.log(data);
+  try {
+    //&If you are trying to update a field which is not present in your schema then mongoDB will simply ignore it.that field/data will not be added inside the document.
+
+    //&Passing the third parameter also which is options,options is basically an object.
+    const updatedUser = await User.findByIdAndUpdate({ _id: userId }, data, {
+      returnDocument: "after",
+    });
+    console.log(updatedUser);
+    res.send("User updated successfully");
   } catch (error) {
     res.status(400).send("Something went wrong");
   }
